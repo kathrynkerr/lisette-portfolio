@@ -120,43 +120,43 @@ audio2.addEventListener(
 );
 
 //click on timeline to skip around
-const timeline = audioPlayer2.querySelector(".timeline");
-timeline.addEventListener("click", e => {
-  const timelineWidth = window.getComputedStyle(timeline).width;
-  const timeToSeek = e.offsetX / parseInt(timelineWidth) * audio2.duration;
+const timeline2 = audioPlayer2.querySelector(".timeline");
+timeline2.addEventListener("click", e => {
+  const timelineWidth2 = window.getComputedStyle(timeline2).width;
+  const timeToSeek = e.offsetX / parseInt(timelineWidth2) * audio2.duration;
   audio2.currentTime = timeToSeek;
 }, false);
 
 //click volume slider to change volume
-const volumeSlider = audioPlayer2.querySelector(".controls .volume-slider");
-volumeSlider.addEventListener('click', e => {
-  const sliderWidth = window.getComputedStyle(volumeSlider).width;
-  const newVolume = e.offsetX / parseInt(sliderWidth);
-  audio2.volume = newVolume;
-  audioPlayer2.querySelector(".controls .volume-percentage").style.width = newVolume * 100 + '%';
+const volumeSlider2 = audioPlayer2.querySelector(".controls .volume-slider");
+volumeSlider2.addEventListener('click', e => {
+  const sliderWidth2 = window.getComputedStyle(volumeSlider2).width;
+  const newVolume2 = e.offsetX / parseInt(sliderWidth2);
+  audio2.volume = newVolume2;
+  audioPlayer2.querySelector(".controls .volume-percentage").style.width = newVolume2 * 100 + '%';
 }, false)
 
 //check audio percentage and update time accordingly
 setInterval(() => {
-  const progressBar = audioPlayer2.querySelector(".progress");
-  progressBar.style.width = audio2.currentTime / audio2.duration * 100 + "%";
+  const progressBar2 = audioPlayer2.querySelector(".progress");
+  progressBar2.style.width = audio2.currentTime / audio2.duration * 100 + "%";
   audioPlayer2.querySelector(".time .current").textContent = getTimeCodeFromNum(
     audio2.currentTime
   );
 }, 500);
 
 //toggle between playing and pausing on button click
-const playBtn = audioPlayer2.querySelector(".controls .toggle-play");
-playBtn.addEventListener(
+const playBtn2 = audioPlayer2.querySelector(".controls .toggle-play");
+playBtn2.addEventListener(
   "click",
   () => {
     if (audio2.paused) {
-      playBtn.classList.remove("play");
-      playBtn.classList.add("pause");
+      playBtn2.classList.remove("play");
+      playBtn2.classList.add("pause");
       audio2.play();
     } else {
-      playBtn.classList.remove("pause");
-      playBtn.classList.add("play");
+      playBtn2.classList.remove("pause");
+      playBtn2.classList.add("play");
       audio2.pause();
     }
   },
@@ -164,14 +164,14 @@ playBtn.addEventListener(
 );
 
 audioPlayer2.querySelector(".volume-button").addEventListener("click", () => {
-  const volumeEl = audioPlayer2.querySelector(".volume-container .volume");
+  const volumeEl2 = audioPlayer2.querySelector(".volume-container .volume");
   audio2.muted = !audio2.muted;
   if (audio2.muted) {
-    volumeEl.classList.remove("icono-volumeMedium");
-    volumeEl.classList.add("icono-volumeMute");
+    volumeEl2.classList.remove("icono-volumeMedium");
+    volumeEl2.classList.add("icono-volumeMute");
   } else {
-    volumeEl.classList.add("icono-volumeMedium");
-    volumeEl.classList.remove("icono-volumeMute");
+    volumeEl2.classList.add("icono-volumeMedium");
+    volumeEl2.classList.remove("icono-volumeMute");
   }
 });
 
@@ -180,8 +180,8 @@ function getTimeCodeFromNum(num) {
   let seconds = parseInt(num);
   let minutes = parseInt(seconds / 60);
   seconds -= minutes * 60;
-  const hours = parseInt(minutes / 60);
-  minutes -= hours * 60;
+  const hours2 = parseInt(minutes / 60);
+  minutes -= hours2 * 60;
 
   if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
   return `${String(hours).padStart(2, 0)}:${minutes}:${String(
