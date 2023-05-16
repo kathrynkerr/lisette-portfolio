@@ -1,4 +1,5 @@
-// Possible improvements:
+<script>
+  // Possible improvements:
 // - Change timeline and volume slider into input sliders, reskinned
 // - Change into Vue or React component
 // - Be able to grab a custom title instead of "Music Song"
@@ -92,3 +93,4 @@ function getTimeCodeFromNum(num) {
     seconds % 60
   ).padStart(2, 0)}`;
 }
+</script>
