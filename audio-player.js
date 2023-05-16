@@ -1,4 +1,3 @@
-<script>
   // Possible improvements:
 // - Change timeline and volume slider into input sliders, reskinned
 // - Change into Vue or React component
@@ -93,4 +92,3 @@ function getTimeCodeFromNum(num) {
     seconds % 60
   ).padStart(2, 0)}`;
 }
-</script>
